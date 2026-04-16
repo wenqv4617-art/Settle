@@ -6511,7 +6511,7 @@ ${worldbookSection}
 <!-- 注册 Service Worker -->
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js')
+  navigator.serviceWorker.register('./sw.js', { scope: './' })
     .then(reg => console.log('✅ PWA 服务已就绪'))
     .catch(err => console.log('❌ PWA 注册失败', err));
 }
