@@ -5007,19 +5007,19 @@ ${worldbookSection}
     const mainTabBar = document.getElementById('mainTabBar');
     
     function switchPage(pageId) {
-        Object.values(pages).forEach(p => p?.classList.remove('active'));
-        pages[pageId]?.classList.add('active');
-        
-        if (pageId === 'home' || pageId === 'fridge' || pageId === 'accounting' || pageId === 'datamanager' || pageId === 'worldbook' || pageId === 'worldbook-detail') {
-            mainTabBar.style.display = 'none';
-        } else {
-            mainTabBar.style.display = 'flex';
-        }
-        
-        if (pageId === 'chat') {
-            refreshConversationList();
-            tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === 'chat'));
-        } else if (pageId === 'contacts') {
+    Object.values(pages).forEach(p => p?.classList.remove('active'));
+    pages[pageId]?.classList.add('active');
+    
+    if (pageId === 'home' || pageId === 'fridge' || pageId === 'accounting' || pageId === 'datamanager' || pageId === 'worldbook' || pageId === 'worldbook-detail' || pageId === 'conversation') {
+        mainTabBar.style.display = 'none';
+    } else {
+        mainTabBar.style.display = 'flex';
+    }
+    
+    if (pageId === 'chat') {
+        refreshConversationList();
+        tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === 'chat'));
+    } else if (pageId === 'contacts') {
             refreshContactList();
             tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === 'contacts'));
         } else if (pageId === 'profile') {
